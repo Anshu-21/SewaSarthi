@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sewasarthi – Coming Soon</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
@@ -17,7 +18,6 @@
     html, body {
       width: 100%;
       height: 100%;
-      margin: 0;
       background: #020617;
     }
 
@@ -32,44 +32,15 @@
       color: #ffffff;
       overflow-x: hidden;
       position: relative;
+      padding: 16px;
     }
 
     .container {
       text-align: center;
-      padding: 32px 18px;
-      max-width: 700px;
+      max-width: 720px;
       width: 100%;
       position: relative;
-      z-index: 1;
-    }
-
-    .logo {
-      font-size: clamp(28px, 6vw, 44px);
-      font-weight: 700;
-      letter-spacing: 1px;
-      margin-bottom: 10px;
-      background: linear-gradient(90deg, #22c55e, #38bdf8);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .tagline {
-      font-size: clamp(14px, 3.5vw, 16px);
-      color: #94a3b8;
-      margin-bottom: 24px;
-    }
-
-    h1 {
-      font-size: clamp(22px, 5.5vw, 36px);
-      margin-bottom: 10px;
-      line-height: 1.2;
-    }
-
-    .subtitle {
-      font-size: clamp(14px, 4vw, 18px);
-      color: #cbd5f5;
-      margin-bottom: 24px;
-      line-height: 1.6;
+      z-index: 2;
     }
 
     .badge {
@@ -83,12 +54,42 @@
       margin-bottom: 14px;
     }
 
+    .logo {
+      font-size: clamp(30px, 6vw, 46px);
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+      background: linear-gradient(90deg, #22c55e, #38bdf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .tagline {
+      font-size: clamp(14px, 3.5vw, 16px);
+      color: #94a3b8;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: clamp(22px, 5.5vw, 36px);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+
+    .subtitle {
+      font-size: clamp(14px, 4vw, 18px);
+      color: #cbd5f5;
+      margin-bottom: 26px;
+      line-height: 1.6;
+    }
+
     .notify-box {
       display: flex;
-      gap: 10px;
-      margin-top: 20px;
+      align-items: center;
       justify-content: center;
-      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+      width: 100%;
     }
 
     .notify-box input {
@@ -96,7 +97,8 @@
       border-radius: 10px;
       border: none;
       outline: none;
-      width: min(100%, 280px);
+      width: 260px;
+      max-width: 100%;
       font-size: 15px;
     }
 
@@ -109,13 +111,14 @@
       color: #020617;
       font-weight: 600;
       font-size: 15px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      width: min(100%, 200px);
+      transition: 0.25s ease;
+      width: 160px;
+      max-width: 100%;
     }
 
     .notify-box button:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(34,197,94,0.35);
+      box-shadow: 0 8px 24px rgba(34,197,94,0.4);
     }
 
     .footer {
@@ -126,48 +129,57 @@
 
     .glow, .glow2 {
       position: absolute;
-      width: 300px;
-      height: 300px;
+      width: 320px;
+      height: 320px;
       filter: blur(70px);
       z-index: 0;
+      pointer-events: none;
     }
 
     .glow {
       background: radial-gradient(circle, rgba(34,197,94,0.25), transparent 60%);
-      top: -100px;
-      left: -100px;
+      top: -110px;
+      left: -110px;
     }
 
     .glow2 {
       background: radial-gradient(circle, rgba(56,189,248,0.25), transparent 60%);
-      bottom: -100px;
-      right: -100px;
+      bottom: -110px;
+      right: -110px;
     }
 
     @media (max-width: 480px) {
       .notify-box {
         flex-direction: column;
-        gap: 12px;
+        align-items: center;
+      }
+
+      .notify-box input,
+      .notify-box button {
+        width: 100%;
       }
     }
   </style>
 </head>
 
 <body>
+
   <div class="page">
     <div class="glow"></div>
     <div class="glow2"></div>
 
     <div class="container">
+
       <div class="badge">🚀 Launching Soon</div>
       <div class="logo">Sewasarthi</div>
       <div class="tagline">Your trusted service partner</div>
 
       <h1>We are building something amazing</h1>
+
       <p class="subtitle">
         Sewasarthi is a smart platform that connects you with trusted local service
         professionals — fast, reliable, and hassle-free.
-        <br /><br />
+        <br><br>
         Stay tuned, we’re launching very soon!
       </p>
 
@@ -179,6 +191,7 @@
       <p id="msg" style="margin-top:12px;color:#22c55e;font-weight:500;"></p>
 
       <div class="footer">© 2026 Sewasarthi • All rights reserved</div>
+
     </div>
   </div>
 
