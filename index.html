@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sewasarthi – Coming Soon</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
     * {
       margin: 0;
@@ -13,48 +14,61 @@
       font-family: 'Inter', sans-serif;
     }
 
-    body {
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      background: #020617;
+    }
+
+    .page {
       min-height: 100vh;
+      min-height: 100svh;
+      min-height: 100dvh;
       background: linear-gradient(135deg, #0f172a, #020617);
       display: flex;
       align-items: center;
       justify-content: center;
       color: #ffffff;
-      overflow: hidden;
+      overflow-x: hidden;
+      position: relative;
     }
 
     .container {
       text-align: center;
-      padding: 40px 24px;
+      padding: 32px 18px;
       max-width: 700px;
       width: 100%;
+      position: relative;
+      z-index: 1;
     }
 
     .logo {
-      font-size: 44px;
+      font-size: clamp(28px, 6vw, 44px);
       font-weight: 700;
       letter-spacing: 1px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       background: linear-gradient(90deg, #22c55e, #38bdf8);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .tagline {
-      font-size: 16px;
+      font-size: clamp(14px, 3.5vw, 16px);
       color: #94a3b8;
-      margin-bottom: 32px;
+      margin-bottom: 24px;
     }
 
     h1 {
-      font-size: 36px;
-      margin-bottom: 12px;
+      font-size: clamp(22px, 5.5vw, 36px);
+      margin-bottom: 10px;
+      line-height: 1.2;
     }
 
     .subtitle {
-      font-size: 18px;
+      font-size: clamp(14px, 4vw, 18px);
       color: #cbd5f5;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
       line-height: 1.6;
     }
 
@@ -64,15 +78,15 @@
       color: #22c55e;
       padding: 6px 14px;
       border-radius: 999px;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 500;
-      margin-bottom: 18px;
+      margin-bottom: 14px;
     }
 
     .notify-box {
       display: flex;
       gap: 10px;
-      margin-top: 24px;
+      margin-top: 20px;
       justify-content: center;
       flex-wrap: wrap;
     }
@@ -82,7 +96,7 @@
       border-radius: 10px;
       border: none;
       outline: none;
-      width: 260px;
+      width: min(100%, 280px);
       font-size: 15px;
     }
 
@@ -96,6 +110,7 @@
       font-weight: 600;
       font-size: 15px;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
+      width: min(100%, 200px);
     }
 
     .notify-box button:hover {
@@ -104,61 +119,68 @@
     }
 
     .footer {
-      margin-top: 36px;
-      font-size: 14px;
+      margin-top: 28px;
+      font-size: 13px;
       color: #94a3b8;
     }
 
-    .glow {
+    .glow, .glow2 {
       position: absolute;
-      width: 450px;
-      height: 450px;
+      width: 300px;
+      height: 300px;
+      filter: blur(70px);
+      z-index: 0;
+    }
+
+    .glow {
       background: radial-gradient(circle, rgba(34,197,94,0.25), transparent 60%);
-      top: -120px;
-      left: -120px;
-      filter: blur(60px);
+      top: -100px;
+      left: -100px;
     }
 
     .glow2 {
-      position: absolute;
-      width: 450px;
-      height: 450px;
       background: radial-gradient(circle, rgba(56,189,248,0.25), transparent 60%);
-      bottom: -120px;
-      right: -120px;
-      filter: blur(60px);
+      bottom: -100px;
+      right: -100px;
     }
 
-    @media (max-width: 640px) {
-      h1 { font-size: 28px; }
-      .subtitle { font-size: 16px; }
-      .logo { font-size: 34px; }
+    @media (max-width: 480px) {
+      .notify-box {
+        flex-direction: column;
+        gap: 12px;
+      }
     }
   </style>
 </head>
+
 <body>
-  <div class="glow"></div>
-  <div class="glow2"></div>
+  <div class="page">
+    <div class="glow"></div>
+    <div class="glow2"></div>
 
-  <div class="container">
-    <div class="badge">🚀 Launching Soon</div>
-    <div class="logo">Sewasarthi</div>
-    <div class="tagline">Your trusted service partner</div>
+    <div class="container">
+      <div class="badge">🚀 Launching Soon</div>
+      <div class="logo">Sewasarthi</div>
+      <div class="tagline">Your trusted service partner</div>
 
-    <h1>We are building something amazing</h1>
-    <p class="subtitle">
-      Sewasarthi is a smart platform that connects you with trusted local service
-      professionals — fast, reliable, and hassle‑free.
-      <br /><br />
-      Stay tuned, we’re launching very soon!
-    </p>
+      <h1>We are building something amazing</h1>
+      <p class="subtitle">
+        Sewasarthi is a smart platform that connects you with trusted local service
+        professionals — fast, reliable, and hassle-free.
+        <br /><br />
+        Stay tuned, we’re launching very soon!
+      </p>
 
-    <div class="notify-box">
-  <input type="email" id="email" placeholder="Enter your email" />
-  <button onclick="submitEmail()">Notify Me</button>
-</div>
+      <div class="notify-box">
+        <input type="email" id="email" placeholder="Enter your email" />
+        <button onclick="submitEmail()">Notify Me</button>
+      </div>
 
-<p id="msg" style="margin-top:12px;color:#22c55e;font-weight:500;"></p>
+      <p id="msg" style="margin-top:12px;color:#22c55e;font-weight:500;"></p>
+
+      <div class="footer">© 2026 Sewasarthi • All rights reserved</div>
+    </div>
+  </div>
 
 <script>
 const API_URL = "https://script.google.com/macros/s/AKfycbzy2y5Yp9O0xlftn8vTtrVW1Pt37BJZFvgfC8XahzK9IngXtark5Upgkw7U3-RbUSch/exec";
@@ -175,11 +197,9 @@ function submitEmail() {
 
   fetch(API_URL, {
     method: "POST",
-    mode: "no-cors",   // 👈 THIS FIXES CORS
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ email }),
+    mode: "no-cors",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email })
   });
 
   msg.style.color = "#22c55e";
@@ -188,11 +208,5 @@ function submitEmail() {
 }
 </script>
 
-
-
-    <div class="footer">© 2026 Sewasarthi • All rights reserved</div>
-  </div>
 </body>
 </html>
-
-
